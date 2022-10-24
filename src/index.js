@@ -4,7 +4,10 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {};
+export const replaceZAndVFromString = (string) => {
+    return string.replace(/z/gi,'*').replace(/v/gi, '*')
+};
+
 
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
@@ -16,7 +19,15 @@ export const replaceZAndVFromString = (string) => {};
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+export const changeWord = (string, word, newWord) => {
+    if (string.search(word) >= 0) {
+        return string.replace(word,newWord)
+    } else return string
+};
+// let string = 'my name bohdan and I';
+// let word = 'bohdan';
+// let newWord = 'vlad';
+// console.log(changeWord(string));
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
