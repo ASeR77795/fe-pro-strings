@@ -37,7 +37,7 @@ export const changeWord = (string, word, newWord) => {
  */
 export const truncate = (string, length) => {
 if(length >=0 ) {
-    return srtint.slice(0,length)
+    return string.slice(0,length)
 } else return string};
 
 /**
