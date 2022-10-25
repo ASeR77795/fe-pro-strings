@@ -35,7 +35,10 @@ export const changeWord = (string, word, newWord) => {
  * @param {number} length
  * @returns {string}
  */
-export const truncate = (string, length) => {};
+export const truncate = (string, length) => {
+if(length >=0 ) {
+    return srtint.slice(0,length)
+} else return string};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -48,7 +51,21 @@ export const truncate = (string, length) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => {};
+  export  const quantityOfSymbols = (string, symbol) => {
+  const lSymb = symbol.toLowerCase();
+  const lStr = string.toLowerCase();
+
+  let counter = 0;
+  for (let i = 0; i < lStr.length; i++) {
+    if (lStr[i] === lSymb) {
+      counter++;
+    }
+  }
+
+  return counter;
+};
+
+    
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -65,4 +82,20 @@ export const quantityOfSymbols = (string, symbol) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {};
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {  
+  const lString = string.toLowerCase();
+  const lSymbol = symbol.toLowerCase();
+
+  let counter = 0;
+  let position = 0;
+
+  while (true) {
+    const foundIndex = lString.indexOf(lSymbol, position);
+    if (foundIndex === -1) {
+      break;
+    }
+    counter++;
+    position = foundIndex + 1;
+  }
+  return counter;
+};
